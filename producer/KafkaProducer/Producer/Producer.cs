@@ -9,8 +9,11 @@ class Producer
         if (args.Length != 1)
         {
             Console.WriteLine("Please provide the configuration file path as a command line argument");
+            // Remove the below lines if arg is provided.
+            args = new string[1];
+            args[0] = @"D:\SourceCode\getting-started.properties";
         }
-        
+
         IConfiguration configuration = new ConfigurationBuilder()
             .AddIniFile(args[0])
             .Build();
